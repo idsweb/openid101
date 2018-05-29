@@ -9,3 +9,14 @@ C:\Projects\staff-i\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClie
 C:\Projects\staff-i\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClientWeb.AssemblyInfo.cs
 C:\Projects\staff-i\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClientWeb.dll
 C:\Projects\staff-i\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClientWeb.pdb
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\bin\Debug\netcoreapp2.0\OpenIdClientWeb.deps.json
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\bin\Debug\netcoreapp2.0\OpenIdClientWeb.runtimeconfig.json
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\bin\Debug\netcoreapp2.0\OpenIdClientWeb.runtimeconfig.dev.json
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\bin\Debug\netcoreapp2.0\OpenIdClientWeb.dll
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\bin\Debug\netcoreapp2.0\OpenIdClientWeb.pdb
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClientWeb.csprojAssemblyReference.cache
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClientWeb.csproj.CoreCompileInputs.cache
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClientWeb.AssemblyInfoInputs.cache
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClientWeb.AssemblyInfo.cs
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClientWeb.dll
+C:\Users\Ian\Documents\webprojects\openid101\OpenIdClientWeb\obj\Debug\netcoreapp2.0\OpenIdClientWeb.pdb

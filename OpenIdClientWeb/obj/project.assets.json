@@ -12662,23 +12662,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ian\\.nuget\\packages\\": {},
+    "C:\\Users\\00772545\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ian\\Documents\\webprojects\\openid101\\OpenIdClientWeb\\OpenIdClientWeb.csproj",
+      "projectUniqueName": "C:\\Projects\\staff-i\\openid101\\OpenIdClientWeb\\OpenIdClientWeb.csproj",
       "projectName": "OpenIdClientWeb",
-      "projectPath": "C:\\Users\\Ian\\Documents\\webprojects\\openid101\\OpenIdClientWeb\\OpenIdClientWeb.csproj",
-      "packagesPath": "C:\\Users\\Ian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ian\\Documents\\webprojects\\openid101\\OpenIdClientWeb\\obj\\",
+      "projectPath": "C:\\Projects\\staff-i\\openid101\\OpenIdClientWeb\\OpenIdClientWeb.csproj",
+      "packagesPath": "C:\\Users\\00772545\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\staff-i\\openid101\\OpenIdClientWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ian\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\00772545\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

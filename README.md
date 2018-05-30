@@ -186,3 +186,84 @@ namespace OpenIdClientWeb.Controllers
     }
 }
 ```
+###Viewing the claims
+Add another action to the account controller
+```cs
+                /// <summary>
+        /// This is just a helper action to enable you to easily see all claims related to a user. It helps when debugging your
+        /// application to see the in claims populated from the Auth0 ID Token
+        /// </summary>
+        /// <returns></returns>
+        [Authorize]
+        public IActionResult Claims()
+        {
+            return View();
+        }
+```
+And a corresponding view under Views/Account called Claims.cshtml
+```html
+<div class="row">
+    <div class="col-md-12">
+
+        <h3>Claims associated with current User</h3>
+        <p>This page displays all the claims associated the the current User. This is useful when debugging to see which claims are being populated from the Auth0 ID Token.</p>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    Claim
+                </th>
+                <th>
+                    Value
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var claim in User.Claims)
+            {
+                <tr>
+                    <td>@claim.Type</td>
+                    <td>@claim.Value</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+```
+Add a link to the controller action on the layout page
+```HTML
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li><a  asp-controller="Account" asp-action="Logout">Logout</a></li>
+                    <li><a  asp-controller="Account" asp-action="Claims">Logout</a></li>
+                }
+```
+In the startup.cs file add additional scopes
+```cs
+                options.Scope.Add("openid email profile");
+```
+###Adding a custom scope
+in Auth0 you add metadata in the users scopes tab
+```json
+{
+  "lccid": "lcc-1122334"
+}
+```
+And use rules to map this to a namespaced scope 
+```js
+function (user, context, callback) {
+  // TODO: implement your rule
+  const namespace = 'https://lcc.planbpoc.com/';
+  context.idToken[namespace + 'lccid'] = user.lccid;
+  callback(null, user, context);
+}
+```
+The URI doesn't have to resolve to real end point.
+
+Now you can add that claim to the scope
+```cs
+                options.Scope.Add("openid email profile lccid");
+```
+This will pull through the custom claim as well. This would probably be set using the management api.

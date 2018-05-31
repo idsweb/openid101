@@ -240,11 +240,14 @@ Add a link to the controller action on the layout page
                     <li><a  asp-controller="Account" asp-action="Claims">Logout</a></li>
                 }
 ```
+Its worth a look at this link https://jwt.io/introduction/ to learn more about jwts.
+
+###Adding a custom scope
+The OIDC spec allows for custom scopes. In Auth0 that means metadata (application level or user level) mapped to the claims (scopes) using a rule.
 In the startup.cs file add additional scopes
 ```cs
                 options.Scope.Add("openid email profile");
 ```
-###Adding a custom scope
 in Auth0 you add metadata in the users scopes tab
 ```json
 {

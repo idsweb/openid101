@@ -270,3 +270,112 @@ Now you can add that claim to the scope
                 options.Scope.Add("openid email profile lccid");
 ```
 This will pull through the custom claim as well. This would probably be set using the management api.
+
+### stopping the default claim mapping behaviour
+With the default mappings we get
+<table class="table">
+            <thead>
+            <tr>
+                <th>
+                    Claim
+                </th>
+                <th>
+                    Value
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>https://lcc.planbpoc.com/lccid</td>
+                    <td>lcc-1122334</td>
+                </tr>
+                <tr>
+                    <td>nickname</td>
+                    <td>ian.stafford</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>ian.stafford@leeds.gov.uk</td>
+                </tr>
+                <tr>
+                    <td>picture</td>
+                    <td>https://s.gravatar.com/avatar/228e43ab15a654d84695cba697666b4d?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fia.png</td>
+                </tr>
+                <tr>
+                    <td>updated_at</td>
+                    <td>&quot;2018-05-31T11:10:19.659Z&quot;</td>
+                </tr>
+                <tr>
+                    <td>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</td>
+                    <td>ian.stafford@leeds.gov.uk</td>
+                </tr>
+                <tr>
+                    <td>email_verified</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier</td>
+                    <td>auth0|5b0694935d7d1617fd7f136d</td>
+                </tr>
+            </tbody>
+        </table>
+
+To stop the default behaviour of mapping claims you can insert the following line in the startup class
+```cs
+            app.UseStaticFiles();
+
+            // This method stops asp.net core identity middleware from mapping the claims to internal ones.
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            app.UseAuthentication();
+```
+This goes in the configure method in the startup class
+Now the claims look like this
+<table class="table">
+            <thead>
+            <tr>
+                <th>
+                    Claim
+                </th>
+                <th>
+                    Value
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>https://lcc.planbpoc.com/lccid</td>
+                    <td>lcc-1122334</td>
+                </tr>
+                <tr>
+                    <td>nickname</td>
+                    <td>ian.stafford</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>ian.stafford@leeds.gov.uk</td>
+                </tr>
+                <tr>
+                    <td>picture</td>
+                    <td>https://s.gravatar.com/avatar/228e43ab15a654d84695cba697666b4d?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fia.png</td>
+                </tr>
+                <tr>
+                    <td>updated_at</td>
+                    <td>&quot;2018-05-31T11:13:15.268Z&quot;</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>ian.stafford@leeds.gov.uk</td>
+                </tr>
+                <tr>
+                    <td>email_verified</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>sub</td>
+                    <td>auth0|5b0694935d7d1617fd7f136d</td>
+                </tr>
+            </tbody>
+        </table>
+
+Noteabley the sub claim (subject identifier from the json web token) is now visible as sub not http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier
